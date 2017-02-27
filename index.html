@@ -4,127 +4,14 @@
 	<meta charset="UTF-8">
 	<title>简易编译器</title>
 
-	<style type="text/css">
-		.hander{
-			border: 1px solid red;
-			background: green;
-			position: relative;
-			height: 100px;
-			left: 0px;
-			right: 0px;
-		}
-		.son{
-			border: 1px solid red;
-			position: relative;
-			background: lightgray;
-			height: 500px;
-			left: 0px;
-			right: 0px;
-		}
-		.d1{
-			border: 1px solid yellow;
-			position: relative;
-			background: #369;
-			width: 300px;
-			height: 600px;
-			float: left;
-		}
+<link rel="stylesheet" href="index.css" type="text/css">
+</head>
 
-		.d2{
-			border: 1px solid yellow;
-			position: relative;
-
-			width: 400px;
-			height: 500px;
-			float: left;
-		}
-
-		.d3{
-			border: 1px solid yellow;
-			position: relative;
-			background: #369;
-			width: 300px;
-			height: 600px;
-			float: right;
-		}
-		input{
-			display: block;
-		}
-		
-	</style>
+<body>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="test.js"></script>
 
-	<script>
-
-		$(document).ready(function(){
-
-			var textNum = 1000;
-			var buttonNum = 1000;
-			var radioBase = 1000;
-			//当前元素id	
-			var idStrCurrent;
-
-			$(".textType").click(function(){
-				var idNum = textNum + 1;
-				textNum = idNum;
-				var htmlStr = '<input class="newText" id="' + idNum + '" type="text" name="text name" value = "这是一个文本框">';
-				$('.d2').append(htmlStr);
-			});
-
-			$(".buttonType").click(function(){
-
-				var idNum = buttonNum + 1;
-				bottonNum = idNum;
-				var htmlStr = '<input class="newButton" id="' + idNum + '" type="button" value = "这是一个按钮">';
-				$('.d2').append(htmlStr);
-			});
-
-			$(".radioType").click(function() {
-				var idNum = radioBase + 1;
-				radioBase = idNum;
-
-				var htmlStr = '<input class="newRadio" id="' + idNum + '" type="button" value = "这是一个单选">';
-				$('.d2').append(htmlStr);	
-			});
-
-
-			//控件点击出属性
-			$(document).on('click', '.newText,.newButton,newRadio', function(e) {
-
-				var idStr = $(this).attr("id");
-				var nameStr =$(this).attr("name");
-				var typeStr = $(this).attr("type");
-
-				idStrCurrent = idStr;
-
-			 	$(".textId").val(idStr);
-			 	$(".textName").val(nameStr);
-			  	$(".textType").val(typeStr);
-			});
-
-			//提交按钮点击事件
-			$("#btnSubmit").click(function(){
-				var idStr = $(".textId").val();
-				var nameStr = $(".textName").val();
-				var typeStr = $(".textType").val();
-
-				$("#" + idStrCurrent).attr("id",idStr);
-				$("#" + idStrCurrent).attr("name",nameStr);
-				$("#" + idStrCurrent).attr("type",typeStr);
-
-			});
-
-			//重置按钮点击事件
-			$("#btnReset").click(function(){
-
-			});
-
-		});
-	
-	</script>
-</head>
-<body>
 	<div class="hander"></div>
 
 	<div class="son">
